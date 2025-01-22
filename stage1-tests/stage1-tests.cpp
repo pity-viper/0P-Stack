@@ -13,7 +13,9 @@
 #include "../stage1-tests/header-sans-using-namespace.h"   // make sure headers don't have  using namespace std
 #include "../stage1-tests/earlywarning-uses-dynamic-allocation.h"  // ensure dynamic allocation
 
-using namespace std;
+using std::string;
+using std::to_string;
+using std::vector;
 
 // Basic tests - should work with a stack 
 // using a fixed-size array of size at least 3.

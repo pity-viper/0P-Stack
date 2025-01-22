@@ -9,7 +9,9 @@
 #include "gtest/gtest.h"
 #include "stack-stage3.h"
 
-using namespace std;
+using std::string;
+using std::vector;
+using std::ostream;
 
 // a user-defined class to use with our stack template
 class foo {

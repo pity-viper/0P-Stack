@@ -14,7 +14,10 @@
 														   
 #include "stage2-3-tests/sneaky-prevent-std-containers.h" // dissuade students from using standard containers
 
-using namespace std;
+using std::string;
+using std::vector;
+using std::to_string;
+
 
 // Basic tests - should work with a stack 
 // using a fixed-size array of size at least 3.

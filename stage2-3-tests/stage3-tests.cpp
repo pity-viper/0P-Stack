@@ -24,7 +24,10 @@
 														   
 #include "stage2-3-tests/sneaky-project-requirements.h"    
 													   
-using namespace std;
+using std::string;
+using std::vector;
+using std::ostream;
+using std::endl;
 
 // Copy constructor
 TEST(CopyConstructor, EmptyStack) {
