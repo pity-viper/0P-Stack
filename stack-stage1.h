@@ -28,19 +28,20 @@
  */
 
 class stack {
-  public:
+public:
     std::string top(); // non-inline, implemented in stack-stage1.cpp
 
     // inline definitions, doing nothing at the moment
-    void push(const std::string &) { return; }
-    void pop() { return; }
-    size_t size() { return 0; }
-    bool is_empty() { return true; }
+    void push(const std::string &);// { return; }
+    void pop();// { return; }
+    size_t size();// { return 0; }
+    bool is_empty();// { return true; }
 
-    stack() { ; }
+    stack();// { ; }
 
-  private:
-	std::string _data[4];
+private:
+    std::string _data[4];
+    size_t _size;
 };
 
 #endif
