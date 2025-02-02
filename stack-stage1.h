@@ -40,8 +40,10 @@ public:
     stack();// { ; }
 
 private:
-    std::string _data[4];
+    // std::string _data[4];
+    std::string* _data;
     size_t _size;
+    size_t _end_idx;
 };
 
 #endif

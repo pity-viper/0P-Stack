@@ -33,6 +33,7 @@ using std::endl;
 TEST(CopyConstructor, EmptyStack) {
     stack<string> stk1;
     stack<string> stk2 = stk1;
+    // std::cout << "Copy constructor passed" << endl;
     ASSERT_TRUE(stk1.is_empty());
     ASSERT_TRUE(stk2.is_empty());
     ASSERT_EQ(stk1.size(), stk2.size());
