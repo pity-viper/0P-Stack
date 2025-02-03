@@ -72,6 +72,7 @@ stack<T>& stack<T>::operator=(const stack<T>& other) {
 
 }
 
+/*
 template <typename T>
 void stack<T>::push(const T& str) {
     if (_size == 0) {
@@ -95,6 +96,19 @@ void stack<T>::push(const T& str) {
     } else {
         _data[++_end_idx] = str;
     }
+}
+*/
+
+template <typename T>
+void stack<T>::push(const T& str) {
+    T* temp = new T[++_size];
+    for (size_t i = 0; i < _size - 1; i++) {
+        temp[i] = _data[i];
+    }
+    temp[++_end_idx] = str;
+    delete[] _data;
+    _data = temp;
+    temp = nullptr;
 }
 
 template <typename T>
