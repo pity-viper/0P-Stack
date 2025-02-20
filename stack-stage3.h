@@ -72,7 +72,6 @@ stack<T>& stack<T>::operator=(const stack<T>& other) {
 
 }
 
-/*
 template <typename T>
 void stack<T>::push(const T& str) {
     if (_size == 0) {
@@ -97,8 +96,9 @@ void stack<T>::push(const T& str) {
         _data[++_end_idx] = str;
     }
 }
-*/
 
+/*
+plus 1 method
 template <typename T>
 void stack<T>::push(const T& str) {
     T* temp = new T[++_size];
@@ -110,6 +110,64 @@ void stack<T>::push(const T& str) {
     _data = temp;
     temp = nullptr;
 }
+*/
+
+/*
+// plus 10 method
+template <typename T>
+void stack<T>::push(const T& str) {
+    if (_size == 0) {
+        _size = 10;
+        T* temp = new T[_size];
+        temp[++_end_idx] = str;
+        delete[] _data;
+        _data = temp;
+        temp = nullptr;
+
+    }
+    else if (_size == _end_idx + 1) {
+        T* temp = new T[_size + 10];
+        for (size_t i = 0; i < _size; i++) {
+            temp[i] = _data[i];
+        }
+        temp[++_end_idx] = str;
+        delete[] _data;
+        _data = temp;
+        temp = nullptr;
+        _size = _size + 10;
+    } else {
+        _data[++_end_idx] = str;
+    }
+}
+*/
+
+/*
+// 1.5x method
+template <typename T>
+void stack<T>::push(const T& str) {
+    if (_size == 0) {
+        T* temp = new T[++_size];
+        temp[++_end_idx] = str;
+        delete[] _data;
+        _data = temp;
+        temp = nullptr;
+
+    }
+    else if (_size == _end_idx + 1) {
+        T* temp = new T[(size_t) (_size * 1.5f + 0.5)];
+        for (size_t i = 0; i < _size; i++) {
+            temp[i] = _data[i];
+        }
+        temp[++_end_idx] = str;
+        delete[] _data;
+        _data = temp;
+        temp = nullptr;
+        _size = (size_t) (_size * 1.5f + 0.5);
+    } else {
+        _data[++_end_idx] = str;
+    }
+}
+*/
 
 template <typename T>
 void stack<T>::pop() {
